@@ -1,15 +1,16 @@
 import { Component, Input, OnInit, OnChanges, SimpleChanges } from '@angular/core';
 
 @Component({
+  standalone: true,
   selector: 'app-progress',
   templateUrl: './progress.component.html',
   styleUrls: ['./progress.component.css']
 })
 export class ProgressComponent implements OnInit, OnChanges {
-  @Input() value: number;
+  @Input() value!: number | null;
   radius = 54;
   circumference = 2 * Math.PI * this.radius;
-  dashoffset: number;
+  dashoffset!: number | null;
 
   constructor() {
     this.progress(0);
@@ -18,8 +19,8 @@ export class ProgressComponent implements OnInit, OnChanges {
   ngOnInit() { }
 
   ngOnChanges(changes: SimpleChanges) {
-    if (changes.value.currentValue !== changes.value.previousValue) {
-      this.progress(changes.value.currentValue);
+    if (changes['value'].currentValue !== changes['value'].previousValue) {
+      this.progress(changes['value'].currentValue);
     }
   }
 

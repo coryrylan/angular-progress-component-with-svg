@@ -1,8 +1,12 @@
+import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { Observable } from 'rxjs';
+import { ProgressComponent } from '../progress/progress.component';
 
 @Component({
-  selector: 'my-app',
+  standalone: true,
+  imports: [CommonModule, ProgressComponent],
+  selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
