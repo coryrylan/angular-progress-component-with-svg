@@ -1,1 +1,4 @@
-/* Add application styles & imports to this file! */
+body {
+    font-family: Helvetica, Arial, "Lucida Grande", sans-serif;
+    font-weight: 300;
+}
